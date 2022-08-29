@@ -1,0 +1,95 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --no-color create --template app --description Widget Practice --org com.baoflutter --platforms android,ios --project-name widget_flutter widget_flutter
+
+## exception
+
+ProcessException: ProcessException: No such file or directoryWorking directory: "/Volumes/DATA/COURSE/CourseCode/BF8.22/widget_flutter"
+pub env: {
+  "FLUTTER_ROOT": "/Volumes/DATA/ENVIRONMENTS/flutter",
+  "PUB_ENVIRONMENT": "flutter_cli:create",
+  "PUB_CACHE": "/Volumes/DATA/ENVIRONMENTS/flutter/.pub-cache",
+}
+
+  Command: /Volumes/DATA/ENVIRONMENTS/flutter/bin/cache/dart-sdk/bin/dart __deprecated_pub --verbosity=warning get --no-precompile
+
+```
+#0      _DefaultPub.get (package:flutter_tools/src/dart/pub.dart:278:9)
+<asynchronous suspension>
+#1      CreateBase.generateApp (package:flutter_tools/src/commands/create_base.dart:544:7)
+<asynchronous suspension>
+#2      CreateCommand.runCommand (package:flutter_tools/src/commands/create.dart:317:31)
+<asynchronous suspension>
+#3      FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1183:27)
+<asynchronous suspension>
+#4      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#5      CommandRunner.runCommand (package:args/command_runner.dart:209:13)
+<asynchronous suspension>
+#6      FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:281:9)
+<asynchronous suspension>
+#7      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#8      FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:229:5)
+<asynchronous suspension>
+#9      run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:62:9)
+<asynchronous suspension>
+#10     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#11     main (package:flutter_tools/executable.dart:94:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.0.1, on macOS 12.5.1 21G83 darwin-arm, locale en)
+    • Flutter version 3.0.1 at /Volumes/DATA/ENVIRONMENTS/flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision fb57da5f94 (3 months ago), 2022-05-19 15:50:29 -0700
+    • Engine revision caaafc5604
+    • Dart version 2.17.1
+    • DevTools version 2.12.2
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
+    • Android SDK at /Users/phamvanbao/Library/Android/sdk
+    • Platform android-33, build-tools 30.0.3
+    • ANDROID_HOME = /Users/phamvanbao/Library/Android/sdk
+    • ANDROID_SDK_ROOT = /Users/phamvanbao/Library/Android/sdk
+    • Java binary at: /Applications/Android Studio.app/Contents/jre/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 11.0.11+0-b60-7772763)
+    • All Android licenses accepted.
+
+[✓] Xcode - develop for iOS and macOS (Xcode 13.4.1)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • CocoaPods version 1.11.3
+
+[✓] Chrome - develop for the web
+    • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[✓] Android Studio (version 2021.1)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 11.0.11+0-b60-7772763)
+
+[✓] VS Code (version 1.70.2)
+    • VS Code at /Applications/Visual Studio Code.app/Contents
+    • Flutter extension can be installed from:
+      🔨 https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
+
+[✓] Connected device (3 available)
+    • iPhone 13 Pro Max (mobile) • 75DF9D65-796D-4B78-B1AB-CB31A480ED9B • ios            • com.apple.CoreSimulator.SimRuntime.iOS-15-5 (simulator)
+    • macOS (desktop)            • macos                                • darwin-arm64   • macOS 12.5.1 21G83 darwin-arm
+    • Chrome (web)               • chrome                               • web-javascript • Google Chrome 104.0.5112.101
+
+[✓] HTTP Host Availability
+    • All required HTTP hosts are available
+
+• No issues found!
+```
