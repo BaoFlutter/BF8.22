@@ -1,0 +1,12 @@
+const String diemToan = "Điểm Toán";
+const String nhapDiemToan = "Nhập Điểm Toán";
+const String diemVan = "Điểm Văn";
+const String nhapDiemVan = "Nhập điểm Văn";
+const String diemAnh = "Điểm Anh";
+const String nhapDiemAnh = "Nhập điểm Anh";
+const String appBarTile = "Đánh giá học sinh";
+const String adjustment = "Đánh giá";
+const String averageMark = "Điểm trung bình";
+const String grade = "Xếp loại";
+const String show ="Show Information";
+const String information = "Thông tin";
