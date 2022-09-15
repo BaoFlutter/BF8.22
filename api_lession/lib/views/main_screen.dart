@@ -1,4 +1,5 @@
 import 'package:api_lession/data_sources/api_service.dart';
+import 'package:api_lession/models/user.dart';
 import 'package:api_lession/resources/utils/log.dart';
 import 'package:api_lession/resources/widgets/input_field.dart';
 import 'package:api_lession/views/home_screeen.dart';
@@ -67,10 +68,13 @@ class _MainScreenState extends State<MainScreen> {
 
                           if(data['status'] == 'success') {
                             String token = data['token'];
+                            Map userInformationMap = data['data'];
+                            User user = User.fromJson(userInformationMap);
+
                             SharedPreferences pref = await _prefs;
                             await pref.setString("token", token);
 
-                            var route = MaterialPageRoute(builder: (context)=>HomeScreen() );
+                            var route = MaterialPageRoute(builder: (context)=>HomeScreen(user: user,) );
                             Navigator.push(context, route);
                           }
                           else {

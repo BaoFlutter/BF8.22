@@ -34,6 +34,17 @@ class ApiService {
     return response;
 
   }
+  // get User
+  Future  getUserInformation(token){
+    var userInforUrl = ApiUrl.getUserInformation;
+    Future response= http.get(userInforUrl,
+        headers:{
+      "Authorization" : 'Bearer ' + token,
+      "Accept" : "application/json"
+    } );
+
+    return response;
+  }
 
 
 
