@@ -1,3 +1,5 @@
+import 'package:api_lession/controllers/user_controller.dart';
+import 'package:api_lession/controllers/user_obx_controller.dart';
 import 'package:api_lession/data_sources/api_service.dart';
 import 'package:api_lession/models/user.dart';
 import 'package:api_lession/providers/user_provider.dart';
@@ -36,6 +38,10 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     UserProvider userProvider = context.read<UserProvider>();
     //UserProvider userProvider = Provider.of<UserProvider>(context);
+    UserController userController = Get.put(UserController());
+    // GetX Obs
+    UserObxController userObxController = Get.put(UserObxController());
+
     return Scaffold(
       body: Container(
         height: MediaQuery.of(context).size.height,
@@ -75,7 +81,12 @@ class _MainScreenState extends State<MainScreen> {
                             String token = data['token'];
                             Map userInformationMap = data['data'];
                             User user = User.fromJson(userInformationMap); //
+                            // Provider
                             userProvider.updateUserInformation(user: user) ;
+                            // GetX
+                            userController.updateUser(user: user);
+                            // Getx - Obx
+                            userObxController.updateObsUser(user: user);
 
                             SharedPreferences pref = await _prefs;
                             await pref.setString("token", token);
